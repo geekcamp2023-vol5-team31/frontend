@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('../sources/ZenMaruGothic-Regular.ttf') format('ttf'),
+         url('../sources/ZenMaruGothic-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  body {
+    font-family: 'CustomFont', sans-serif;
+  }

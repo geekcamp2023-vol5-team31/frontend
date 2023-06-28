@@ -4,7 +4,7 @@ import styles from '../styles/history.module.css';
 const history = () => {
   return (
     <div>
-      <h2 className={styles.pageName}>- わりかんきろく -</h2>
+      <h3 className={styles.pageName}>-  わりかんきろく  -</h3>
       <Log />
     </div>
   );
