@@ -1,0 +1,13 @@
+.listContainer {
+    overflow-y: scroll;
+}
+
+.list {
+    background-color: #F7FDF6;
+    border: 1px solid #53989C;
+    list-style: none;
+    padding: 5px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
