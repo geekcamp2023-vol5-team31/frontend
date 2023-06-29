@@ -1,4 +1,4 @@
-import styles from '../../styles/List.module.css';
+import styles from '@/styles/List.module.css';
 
 interface ItemProps {
   date: string;
