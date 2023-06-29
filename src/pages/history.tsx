@@ -1,5 +1,5 @@
-import Log from './components/logList';
-import styles from '../styles/history.module.css';
+import Log from '@/components/logList';
+import styles from '@/styles/history.module.css';
 
 const history = () => {
   return (
