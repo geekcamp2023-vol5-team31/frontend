@@ -1,0 +1,13 @@
+.header {
+  background: #84d8dd;
+  padding: 12px 20px;
+}
+
+.title {
+  color: #000;
+  font-size: 24px;
+  font-family: Zen Maru Gothic, serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

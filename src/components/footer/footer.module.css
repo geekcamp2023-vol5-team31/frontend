@@ -1,0 +1,11 @@
+.footer {
+  position: sticky;
+  top: 100vh;
+  background: #84d8dd;
+  display: flex;
+  flex-direction: row;
+}
+
+.link {
+  flex: 1;
+}
