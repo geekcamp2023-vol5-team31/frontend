@@ -20,6 +20,7 @@
     "@types/react-dom": "18.2.6",
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
+    "@xpadev-net/designsystem-icons": "^0.0.5",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.7",
     "eslint-config-prettier": "^8.8.0",
@@ -31,6 +32,7 @@
     "prettier": "^2.8.8",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "sass": "^1.63.6",
     "typescript": "5.0.4"
   }
 }
