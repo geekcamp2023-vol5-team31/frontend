@@ -8,10 +8,8 @@ interface ItemProps {
 const logItem: React.FC<{ item: ItemProps }> = ({ item }) => {
   return (
     <div className={styles.list}>
-      <li>
-        <p>{item.date}</p>
-        <p>{item.title}</p>
-      </li>
+      <p className={styles.date}>{item.date}</p>
+      <p>{item.title}</p>
     </div>
   );
 };
