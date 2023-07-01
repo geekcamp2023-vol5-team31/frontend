@@ -5,9 +5,12 @@
 .list {
   background-color: #f7fdf6;
   border: 1px solid #53989c;
-  list-style: none;
-  padding: 5px;
+  padding: 25px 20px;
   margin-top: 6px;
   margin-bottom: 6px;
-  font-weight: 600;
+  font-weight: 550;
+}
+
+.date{
+  letter-spacing: 2px;
 }

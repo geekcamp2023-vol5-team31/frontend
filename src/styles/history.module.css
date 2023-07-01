@@ -1,3 +1,17 @@
 .pageName {
+  margin-top: 20px;
+  margin-bottom: 20px;
   text-align: center;
+}
+
+.pageName::before {
+  content: "- ";
+}
+
+.pageName::after {
+  content: " -";
+}
+
+.page{
+  margin: 40px;
 }
