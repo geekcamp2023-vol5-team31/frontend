@@ -1,9 +1,10 @@
+import { AddOutlinedIcon } from "@xpadev-net/designsystem-icons";
+
 import { TMember } from "@/@types/member";
 import { Member } from "@/components/payment/members/member";
+import { uuid } from "@/utils/uuid";
 
 import Styles from "./members.module.scss";
-import { AddOutlinedIcon } from "@xpadev-net/designsystem-icons";
-import { uuid } from "@/utils/uuid";
 
 type props = {
   members: TMember[];

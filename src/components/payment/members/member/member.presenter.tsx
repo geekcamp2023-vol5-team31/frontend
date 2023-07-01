@@ -1,8 +1,8 @@
 import { TMember } from "@/@types/member";
+import { NumberInput } from "@/components/number-input";
 import { TextInput } from "@/components/text-input";
 
 import Styles from "./member.module.scss";
-import { NumberInput } from "@/components/number-input";
 
 type props = {
   member: TMember;
