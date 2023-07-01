@@ -1,9 +1,7 @@
 name: prettier/lint Test
 on:
   push:
-    branches-ignore:
-      - main
-      - development
+    branches: [*]
 jobs:
   build:
     runs-on: ubuntu-latest
