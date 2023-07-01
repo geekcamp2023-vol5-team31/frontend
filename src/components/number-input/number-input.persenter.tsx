@@ -23,6 +23,7 @@ const NumberInput = ({ value, onChange, className }: props) => {
       aria-label="number"
       pattern={"[1-9][0-9]*|0"}
       value={input}
+      onFocus={(e) => e.target.select()}
       onChange={(e) => setInput(e.target.value)}
       onBlur={onBlur}
     />

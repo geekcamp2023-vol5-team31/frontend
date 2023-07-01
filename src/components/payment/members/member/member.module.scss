@@ -1,0 +1,32 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  .name {
+    font-size: 16px;
+  }
+  .amount {
+    display: flex;
+    height: 35px;
+    gap: 4px;
+    .input {
+      flex: 1;
+      text-align: right;
+    }
+    .unit {
+      text-align: center;
+      font-size: 24px;
+      height: 35px;
+      width: 35px;
+    }
+  }
+  .diff {
+    text-align: right;
+    &.minus {
+      color: red;
+    }
+    &.plus {
+      color: green;
+    }
+  }
+}
