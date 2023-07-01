@@ -6,9 +6,9 @@ class Item {
   date: Date;
   dayOfWeekStrJP: string[];
 
-  constructor(timestamp: number, title: string) {
-    this.timestamp = timestamp;
-    this.title = title;
+  constructor(item:IItem) {
+    this.timestamp = item.timestamp;
+    this.title = item.title;
     console.log(this.timestamp);
     this.date = new Date(this.timestamp*1000);
     this.dayOfWeekStrJP = ["日", "月", "火", "水", "木", "金", "土"]
@@ -31,12 +31,18 @@ class Item {
   }
 }
 
-interface LogItemProps{
-  item: Item;
+interface ItemProps {
+  item: IItem;
 }
 
-const logItem: React.FC<LogItemProps> = ({ item }) => {
-  const itemInstance = new Item(item.timestamp, item.title);
+interface IItem {
+  id: string;
+  timestamp: number;
+  title: string;
+}
+
+const logItem: React.FC<ItemProps> = ({ item }) => {
+  const itemInstance = new Item(item);
 
   return (
     <div className={styles.list}>
