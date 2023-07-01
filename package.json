@@ -10,6 +10,7 @@
     "eslint": "next lint",
     "eslint:fix": "next lint --fix",
     "format": "prettier --write \"src/**/*.{tsx,ts,js,json,css,scss}\"",
+    "check": "prettier -c \"src/**/*.{tsx,ts,js,json,css,scss}\"",
     "lint": "npm run eslint&&npm run check-types",
     "lint:fix": "npm run format&&npm run eslint:fix&&npm run check-types",
     "prepare": "husky install"
