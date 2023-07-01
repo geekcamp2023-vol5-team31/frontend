@@ -1,6 +1,8 @@
-import Styles from "./footer.module.css";
+import { HistoryIcon, InvoiceIcon } from "@xpadev-net/designsystem-icons";
+
 import { Link } from "@/components/footer/link";
-import { InvoiceIcon, HistoryIcon } from "@xpadev-net/designsystem-icons";
+
+import Styles from "./footer.module.css";
 
 const Footer = () => {
   return (

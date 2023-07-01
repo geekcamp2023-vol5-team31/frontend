@@ -1,0 +1,28 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #000;
+  .title {
+    font-size: 24px;
+    font-weight: 400;
+  }
+  .inputWrapper {
+    display: flex;
+    height: 35px;
+    gap: 4px;
+    .input {
+      flex: 1;
+      text-align: right;
+    }
+    .unit {
+      text-align: center;
+      font-size: 24px;
+      height: 35px;
+      width: 35px;
+    }
+  }
+}
