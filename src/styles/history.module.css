@@ -2,5 +2,16 @@
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
-  letter-spacing: 3px;
+}
+
+.pageName::before {
+  content: "- ";
+}
+
+.pageName::after {
+  content: " -";
+}
+
+.page{
+  margin: 40px;
 }

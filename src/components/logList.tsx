@@ -3,8 +3,8 @@ import styles from "@/styles/List.module.css";
 
 const logList = () => {
   const item = [
-    { id: "1", date: "2023/12/23(土)", title: "クリスマス飲み会" },
-    { id: "2", date: "2023/12/31(日)", title: "忘年会" },
+    { id: "1", timestamp: "1703257200", title: "クリスマス飲み会" },
+    { id: "2", timestamp: "1703948400", title: "忘年会" },
   ];
 
   return (
