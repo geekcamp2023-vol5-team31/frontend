@@ -10,8 +10,8 @@ const logList = () => {
 
   return (
     <div className={styles.listContainer}>
-      {item.map((item) => (
-        <LogItem key={item.id} item={item} />
+      {item.map(item => (
+        <LogItem key={item.id} item={item}/>
       ))}
     </div>
   );
