@@ -1,3 +1,7 @@
-export default function Home() {
-  return <h1>Hello Next.js</h1>;
-}
+import { Payment } from "@/components/payment/payment.presenter";
+
+const Home = () => {
+  return <Payment />;
+};
+
+export default Home;
