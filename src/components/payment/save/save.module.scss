@@ -1,0 +1,14 @@
+.button {
+  position: fixed;
+  right: 16px;
+  bottom: 76px;
+  width: 48px;
+  height: 48px;
+  background: #112ca9;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  .icon {
+    fill: white;
+  }
+}

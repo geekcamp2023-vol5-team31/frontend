@@ -5,6 +5,7 @@
   text-decoration: none;
   padding: 4px 0;
   gap: 4px;
+  height: 60px;
   .iconWrapper {
     height: 28px;
     padding: 4px 12px;
@@ -16,6 +17,7 @@
     }
   }
   .span {
+    font-size: 12px;
     color: #65a6aa;
   }
   &.active {
