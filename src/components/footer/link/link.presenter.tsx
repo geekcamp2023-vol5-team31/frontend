@@ -19,7 +19,9 @@ const Link = ({ href, name, Icon, className }: props) => {
         pathname === href && Styles.active
       }`}
     >
-      <Icon className={Styles.icon} />
+      <div className={Styles.iconWrapper}>
+        <Icon className={Styles.icon} />
+      </div>
       <span className={Styles.span}>{name}</span>
     </NextLink>
   );

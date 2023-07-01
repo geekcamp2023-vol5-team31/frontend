@@ -3,18 +3,30 @@
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-  .icon {
-    fill: #65a6aa;
+  padding: 4px 0;
+  gap: 4px;
+  .iconWrapper {
+    height: 28px;
+    padding: 4px 12px;
+    border-radius: 19px;
+    .icon {
+      height: 20px;
+      width: 20px;
+      fill: #65a6aa;
+    }
   }
   .span {
-    color: black;
+    color: #65a6aa;
   }
   &.active {
-    .icon {
-      fill: #264af4;
+    .iconWrapper {
+      background: #bbf4ff;
+      .icon {
+        fill: #112ca9;
+      }
     }
     .span {
-      color: #264af4;
+      color: #112ca9;
     }
   }
 }
