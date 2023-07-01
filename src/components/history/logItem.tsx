@@ -6,8 +6,8 @@ class Item {
   date: Date;
   dayOfWeekStrJP: string[];
 
-  constructor(timestamp: string, title: string) {
-    this.timestamp = Number(timestamp);
+  constructor(timestamp: number, title: string) {
+    this.timestamp = timestamp;
     this.title = title;
     console.log(this.timestamp);
     this.date = new Date(this.timestamp*1000);
