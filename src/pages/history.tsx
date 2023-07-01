@@ -1,4 +1,4 @@
-import Log from "@/components/history/logList";
+//import Log from "@/components/history/logList";
 import LoginButton from "@/components/history/unregistered/login";
 import styles from "@/styles/history.module.css";
 
