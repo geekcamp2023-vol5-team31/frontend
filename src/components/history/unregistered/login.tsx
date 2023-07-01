@@ -1,32 +1,18 @@
-import { useState } from "react";
+import { GITHUB_CLIENT_ID } from "@/env";
+import { uuid } from "@/utils/uuid";
 
-import styles from "./login.module.css";
+import styles from "./login.module.scss";
 
 const login = () => {
-  const [isPressed, setIsPressed] = useState(false);
-
-  const handleTouchStart = () => {
-    setIsPressed(true);
-  };
-
-  const handleTouchEnd = () => {
-    setIsPressed(false);
-  };
-
   const loginProcessing = () => {
-    //ログイン時の処理
-    console.log("ログインしました");
+    const csrf = uuid();
+    localStorage.setItem("csrf", csrf);
+    location.href = `https://github.com/login/oauth/authorize?client_id=${GITHUB_CLIENT_ID}&redirect_uri=${location.protocol}//${location.host}/callback&state=${csrf}`;
   };
 
   //TODO: スマホに適する処理に差し替え
   return (
-    <button
-      className={`${styles.button} ${isPressed ? styles.buttonPressed : ""}`}
-      onMouseDown={handleTouchStart}
-      onMouseUp={handleTouchEnd}
-      onMouseLeave={handleTouchEnd}
-      onClick={loginProcessing}
-    >
+    <button className={styles.button} onClick={loginProcessing}>
       ログインする
     </button>
   );

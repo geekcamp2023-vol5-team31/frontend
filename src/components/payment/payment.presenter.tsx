@@ -1,16 +1,18 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 import { TMember } from "@/@types/member";
 import { Collect } from "@/components/payment/collect/";
 import { Members } from "@/components/payment/members";
 import { Save } from "@/components/payment/save";
 import { Total } from "@/components/payment/total";
+import { AuthContext } from "@/context/auth";
 import { ZenMaruGothic } from "@/fonts/ZenMaruGothic";
 import { uuid } from "@/utils/uuid";
 
 import Styles from "./payment.module.scss";
 
 const Payment = () => {
+  const { isLoggedIn } = useContext(AuthContext);
   const [total, setTotal] = useState<number>();
 
   const [members, setMembers] = useState<TMember[]>([
@@ -28,7 +30,7 @@ const Payment = () => {
       <Total value={total} onChange={setTotal} key={total} />
       <Collect amount={amount} />
       <Members members={members} onChange={setMembers} collect={amount} />
-      <Save total={total ?? 0} members={members} />
+      {isLoggedIn && <Save total={total ?? 0} members={members} />}
     </div>
   );
 };

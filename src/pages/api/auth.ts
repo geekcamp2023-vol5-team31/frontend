@@ -1,14 +1,17 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
+import { AuthEndpointRes } from "@/@types/AuthEndpoint";
 import { GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET } from "@/env";
 
-type Res = {
-  token: string;
-};
-
-const auth = async (req: NextApiRequest, res: NextApiResponse<Res>) => {
+const auth = async (
+  req: NextApiRequest,
+  res: NextApiResponse<AuthEndpointRes>
+) => {
   const code = req.query.code;
-  if (typeof code !== "string") throw new Error("invalid params");
+  if (typeof code !== "string") {
+    res.status(400).json({ status: 400, message: "invalid code" });
+    return;
+  }
   const body = new FormData();
   body.append("client_id", GITHUB_CLIENT_ID);
   body.append("client_secret", GITHUB_CLIENT_SECRET);
@@ -21,8 +24,14 @@ const auth = async (req: NextApiRequest, res: NextApiResponse<Res>) => {
     body,
   });
   const data = await response.text();
-  const json = JSON.parse(data) as unknown as { access_token: string };
-  res.status(200).json({ token: json.access_token });
+  const json = JSON.parse(data) as unknown as {
+    access_token: string | undefined;
+  };
+  if (typeof json.access_token !== "string") {
+    res.status(400).json({ status: 400, message: "invalid token" });
+    return;
+  }
+  res.status(200).json({ status: 200, token: json.access_token });
 };
 
 export default auth;
