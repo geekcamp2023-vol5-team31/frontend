@@ -1,5 +1,6 @@
-import LogItem from "./logItem";
 import styles from "@/styles/List.module.css";
+
+import LogItem from "./logItem";
 
 const logList = () => {
   const item = [

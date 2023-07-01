@@ -1,7 +1,8 @@
-import Styles from "./link.module.scss";
 import NextLink from "next/link";
-import { FC } from "react";
 import { useRouter } from "next/router";
+import { FC } from "react";
+
+import Styles from "./link.module.scss";
 
 type props = {
   className?: string;

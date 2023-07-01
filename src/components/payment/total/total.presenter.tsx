@@ -1,5 +1,6 @@
-import Styles from "./total.module.scss";
 import { NumberInput } from "@/components/number-input";
+
+import Styles from "./total.module.scss";
 
 type props = {
   value: number | undefined;

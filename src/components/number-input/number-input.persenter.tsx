@@ -1,5 +1,6 @@
-import Styles from "@/components/number-input/number-input.module.scss";
 import { useState } from "react";
+
+import Styles from "@/components/number-input/number-input.module.scss";
 
 type props = {
   value: number | undefined;

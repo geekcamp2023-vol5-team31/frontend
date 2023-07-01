@@ -1,8 +1,10 @@
-import { Total } from "@/components/payment/total";
 import { useState } from "react";
-import { ZenMaruGothic } from "@/fonts/ZenMaruGothic";
-import Styles from "./payment.module.scss";
+
 import { Collect } from "@/components/payment/collect/";
+import { Total } from "@/components/payment/total";
+import { ZenMaruGothic } from "@/fonts/ZenMaruGothic";
+
+import Styles from "./payment.module.scss";
 
 const Payment = () => {
   const [total, setTotal] = useState<number>();
