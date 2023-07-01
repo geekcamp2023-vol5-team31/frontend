@@ -18,8 +18,8 @@
 
 .unregistered {
   display: flex;
-  justify-content: center;  
-  align-items: center;      
+  justify-content: center;
+  align-items: center;
   height: 80%;
   flex-direction: column;
   color: #929292;

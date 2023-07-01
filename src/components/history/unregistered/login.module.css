@@ -1,13 +1,13 @@
 .button {
-    background-color: #8cd5da85;
-    color: #5b5b5b;
-    position: relative;
-    top: 30px;
-    width: 150px;
-    height: 40px;
-    border: none;
+  background-color: #8cd5da85;
+  color: #5b5b5b;
+  position: relative;
+  top: 30px;
+  width: 150px;
+  height: 40px;
+  border: none;
 }
 
 .buttonPressed {
-    background-color: #bbe2e485;
+  background-color: #bbe2e485;
 }

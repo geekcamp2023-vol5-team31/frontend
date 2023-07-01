@@ -6,28 +6,28 @@ class Item {
   date: Date;
   dayOfWeekStrJP: string[];
 
-  constructor(item:IItem) {
+  constructor(item: IItem) {
     this.timestamp = item.timestamp;
     this.title = item.title;
     console.log(this.timestamp);
-    this.date = new Date(this.timestamp*1000);
-    this.dayOfWeekStrJP = ["日", "月", "火", "水", "木", "金", "土"]
+    this.date = new Date(this.timestamp * 1000);
+    this.dayOfWeekStrJP = ["日", "月", "火", "水", "木", "金", "土"];
   }
 
-  get year(): number{
+  get year(): number {
     return this.date.getFullYear();
   }
 
-  get localDate(){
+  get localDate() {
     return this.date.toLocaleDateString().slice(5);
   }
 
-  get week(){
-    return "("+this.dayOfWeekStrJP[this.date.getDay()]+")";
+  get week() {
+    return "(" + this.dayOfWeekStrJP[this.date.getDay()] + ")";
   }
 
   get japanStandardTime() {
-    return this.year.toString()+"/"+this.localDate+this.week;
+    return this.year.toString() + "/" + this.localDate + this.week;
   }
 }
 
