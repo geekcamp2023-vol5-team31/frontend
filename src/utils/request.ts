@@ -1,5 +1,7 @@
+import { API_ENDPOINT } from "@/env";
+
 const request = (url: RequestInfo | URL, init?: RequestInit) => {
-  return fetch(url, {
+  return fetch(`${API_ENDPOINT}${url}`, {
     ...init,
     headers: {
       ...init?.headers,

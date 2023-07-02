@@ -1,7 +1,6 @@
 import { ApplicationIcon } from "@xpadev-net/designsystem-icons";
 
 import { TMember } from "@/@types/member";
-import { API_ENDPOINT } from "@/env";
 import { request } from "@/utils/request";
 
 import Styles from "./save.module.scss";
@@ -22,14 +21,13 @@ const Save = ({ total, members }: props) => {
         total,
         data: members,
       });
-      const req = await request(`${API_ENDPOINT}/myapp/create_event/`, {
+      const req = await request(`/myapp/create_event/`, {
         method: "POST",
         body,
       });
       const res = (await req.json()) as { event_id: string };
       console.log(res);
     })();
-    //保存処理
   };
 
   return (
