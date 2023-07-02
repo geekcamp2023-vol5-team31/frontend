@@ -1,4 +1,5 @@
 import { ApplicationIcon } from "@xpadev-net/designsystem-icons";
+import { useRouter } from "next/router";
 
 import { TMember } from "@/@types/member";
 import { date2str } from "@/utils/date2str";
@@ -12,6 +13,7 @@ type props = {
 };
 
 const Save = ({ total, members }: props) => {
+  const { push } = useRouter();
   const onClick = () => {
     void (async () => {
       const name = window.prompt("名前を入力してください");
@@ -22,12 +24,11 @@ const Save = ({ total, members }: props) => {
         total,
         data: members,
       });
-      const req = await request(`/myapp/create_event/`, {
+      await request(`/myapp/create_event/`, {
         method: "POST",
         body,
       });
-      const res = (await req.json()) as { event_id: string };
-      console.log(res);
+      await push("/history");
     })();
   };
 
