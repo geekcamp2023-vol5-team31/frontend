@@ -8,7 +8,6 @@ import { Members } from "@/components/payment/members";
 import { Save } from "@/components/payment/save";
 import { Total } from "@/components/payment/total";
 import { AuthContext } from "@/context/auth";
-import { ZenMaruGothic } from "@/fonts/ZenMaruGothic";
 import { request } from "@/utils/request";
 import { uuid } from "@/utils/uuid";
 
@@ -42,7 +41,7 @@ const Payment = () => {
 
   //この行を消すとbodyの方も読み込まれなくなるため一旦残す
   return (
-    <div className={`${Styles.wrapper} ${ZenMaruGothic.className}`}>
+    <div className={Styles.wrapper}>
       <Total value={total} onChange={setTotal} key={total} />
       <Collect amount={amount} />
       <Members members={members} onChange={setMembers} collect={amount} />
