@@ -4,7 +4,11 @@ import LogItem from "./logItem";
 
 const logList = () => {
   const item = [
-    { id: "1", timestamp: "2023-07-01T00:00:00", event_name: "クリスマス飲み会" },
+    {
+      id: "1",
+      timestamp: "2023-07-01T00:00:00",
+      event_name: "クリスマス飲み会",
+    },
     { id: "2", timestamp: "2023-08-01T00:00:00", event_name: "忘年会" },
   ];
 
