@@ -1,16 +1,15 @@
 import styles from "@/styles/List.module.css";
 
 class Item {
-  timestamp: number;
-  title: string;
+  timestamp: string;
+  event_name: string;
   date: Date;
   dayOfWeekStrJP: string[];
 
   constructor(item: IItem) {
     this.timestamp = item.timestamp;
-    this.title = item.title;
-    console.log(this.timestamp);
-    this.date = new Date(this.timestamp * 1000);
+    this.event_name = item.event_name;
+    this.date = new Date(this.timestamp);
     this.dayOfWeekStrJP = ["日", "月", "火", "水", "木", "金", "土"];
   }
 
@@ -37,8 +36,8 @@ interface ItemProps {
 
 interface IItem {
   id: string;
-  timestamp: number;
-  title: string;
+  timestamp: string;
+  event_name: string;
 }
 
 const logItem: React.FC<ItemProps> = ({ item }) => {
@@ -47,7 +46,7 @@ const logItem: React.FC<ItemProps> = ({ item }) => {
   return (
     <div className={styles.list}>
       <p className={styles.date}>{itemInstance.japanStandardTime}</p>
-      <p>{itemInstance.title}</p>
+      <p>{itemInstance.event_name}</p>
     </div>
   );
 };
