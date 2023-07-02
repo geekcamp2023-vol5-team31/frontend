@@ -1,12 +1,32 @@
+import { useEffect, useState } from "react";
+
+import { IItem } from "@/@types/item";
 import styles from "@/styles/List.module.css";
+import { request } from "@/utils/request";
 
 import LogItem from "./logItem";
 
 const logList = () => {
-  const item = [
-    { id: "1", timestamp: 1703257200, title: "クリスマス飲み会" },
-    { id: "2", timestamp: 1703948400, title: "忘年会" },
-  ];
+  const [item, setItem] = useState<IItem[]>([]);
+  useEffect(() => {
+    void (async () => {
+      const req = await request("/myapp/get_events/");
+      const res = (await req.json()) as {
+        id: number;
+        event_name: string;
+        timestamp: string;
+      }[];
+      setItem(
+        res.map((item) => {
+          return {
+            id: item.id,
+            timestamp: new Date(item.timestamp),
+            title: item.event_name,
+          };
+        })
+      );
+    })();
+  }, []);
 
   return (
     <div className={styles.listContainer}>

@@ -1,16 +1,14 @@
+import { IItem } from "@/@types/item";
 import styles from "@/styles/List.module.css";
 
 class Item {
-  timestamp: number;
   title: string;
   date: Date;
   dayOfWeekStrJP: string[];
 
   constructor(item: IItem) {
-    this.timestamp = item.timestamp;
     this.title = item.title;
-    console.log(this.timestamp);
-    this.date = new Date(this.timestamp * 1000);
+    this.date = item.timestamp;
     this.dayOfWeekStrJP = ["日", "月", "火", "水", "木", "金", "土"];
   }
 
@@ -33,12 +31,6 @@ class Item {
 
 interface ItemProps {
   item: IItem;
-}
-
-interface IItem {
-  id: string;
-  timestamp: number;
-  title: string;
 }
 
 const logItem: React.FC<ItemProps> = ({ item }) => {
