@@ -1,7 +1,7 @@
 import { API_ENDPOINT } from "@/env";
 
 const request = async (url: RequestInfo | URL, init?: RequestInit) => {
-  const csrf_req = await fetch(`${API_ENDPOINT}/myapp/csrf_token/`, {
+  const csrf_req = await fetch(`${API_ENDPOINT}/csrf_token/`, {
     credentials: "include",
   });
   const csrf_res = (await csrf_req.json()) as { token: string };

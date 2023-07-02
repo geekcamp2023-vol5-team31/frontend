@@ -24,7 +24,7 @@ const Save = ({ total, members }: props) => {
         total,
         data: members,
       });
-      await request(`/myapp/create_event/`, {
+      await request(`/create_event/`, {
         method: "POST",
         body,
       });

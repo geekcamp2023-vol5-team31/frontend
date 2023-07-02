@@ -10,7 +10,7 @@ const logList = () => {
   const [item, setItem] = useState<IItem[]>([]);
   useEffect(() => {
     void (async () => {
-      const req = await request("/myapp/get_events/");
+      const req = await request("/get_events/");
       const res = (await req.json()) as {
         id: number;
         event_name: string;

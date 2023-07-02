@@ -30,7 +30,7 @@ const Payment = () => {
   useEffect(() => {
     if (!isLoggedIn || !query.id) return;
     void (async () => {
-      const req = await request(`/myapp/get_event_detail/${query.id}/`);
+      const req = await request(`/get_event_detail/${query.id}/`);
       const res = (await req.json()) as { total: number; data: TMember[] };
       setTotal(res.total);
       setMembers(res.data);
