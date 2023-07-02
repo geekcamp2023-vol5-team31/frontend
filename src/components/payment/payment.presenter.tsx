@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
 
+import { TEvent } from "@/@types/event";
 import { TMember } from "@/@types/member";
 import { Collect } from "@/components/payment/collect/";
 import { Members } from "@/components/payment/members";
@@ -17,6 +18,7 @@ const Payment = () => {
   const { isLoggedIn } = useContext(AuthContext);
   const { query } = useRouter();
   const [total, setTotal] = useState<number>();
+  const [event, setEvent] = useState<TEvent | undefined>();
 
   const [members, setMembers] = useState<TMember[]>([
     {
@@ -31,11 +33,12 @@ const Payment = () => {
     if (!isLoggedIn || !query.id) return;
     void (async () => {
       const req = await request(`/get_event_detail/${query.id}/`);
-      const res = (await req.json()) as { total: number; data: TMember[] };
+      const res = (await req.json()) as TEvent;
       setTotal(res.total);
       setMembers(res.data);
+      setEvent(res);
     })();
-  }, []);
+  }, [isLoggedIn]);
 
   //この行を消すとbodyの方も読み込まれなくなるため一旦残す
   return (
@@ -43,7 +46,9 @@ const Payment = () => {
       <Total value={total} onChange={setTotal} key={total} />
       <Collect amount={amount} />
       <Members members={members} onChange={setMembers} collect={amount} />
-      {isLoggedIn && <Save total={total ?? 0} members={members} />}
+      {isLoggedIn && (
+        <Save total={total ?? 0} members={members} event={event} />
+      )}
     </div>
   );
 };
