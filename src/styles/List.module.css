@@ -11,6 +11,11 @@
   font-weight: 550;
 }
 
+.link {
+  text-decoration: none;
+  color: black;
+}
+
 .date {
   letter-spacing: 2px;
 }

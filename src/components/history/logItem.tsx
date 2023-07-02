@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { IItem } from "@/@types/item";
 import styles from "@/styles/List.module.css";
 
@@ -37,10 +39,12 @@ const logItem: React.FC<ItemProps> = ({ item }) => {
   const itemInstance = new Item(item);
 
   return (
-    <div className={styles.list}>
-      <p className={styles.date}>{itemInstance.japanStandardTime}</p>
-      <p>{itemInstance.title}</p>
-    </div>
+    <Link href={`/?id=${item.id}`} className={styles.link}>
+      <div className={styles.list}>
+        <p className={styles.date}>{itemInstance.japanStandardTime}</p>
+        <p>{itemInstance.title}</p>
+      </div>
+    </Link>
   );
 };
 
