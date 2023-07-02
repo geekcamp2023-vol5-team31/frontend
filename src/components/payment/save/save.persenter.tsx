@@ -1,6 +1,7 @@
 import { ApplicationIcon } from "@xpadev-net/designsystem-icons";
 
 import { TMember } from "@/@types/member";
+import { date2str } from "@/utils/date2str";
 import { request } from "@/utils/request";
 
 import Styles from "./save.module.scss";
@@ -17,7 +18,7 @@ const Save = ({ total, members }: props) => {
       if (!name) return;
       const body = JSON.stringify({
         event_name: name,
-        timestamp: Math.floor(Date.now() / 1000),
+        timestamp: date2str(new Date()),
         total,
         data: members,
       });
